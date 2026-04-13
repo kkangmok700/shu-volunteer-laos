@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { activities } from "@/data/activities";
+import { performances } from "@/data/performances";
 
 export default function ActivitiesPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -72,6 +73,38 @@ export default function ActivitiesPage() {
             )}
           </button>
         ))}
+      </div>
+
+      {/* Performances */}
+      <div className="mt-8 bg-white rounded-xl border border-gray-200 p-6">
+        <h3 className="font-bold text-lg mb-1">공연 프로그램</h3>
+        <p className="text-sm text-slate-500 mb-4">현지 발표회에서 선보일 공연 목록</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {performances.map((p) => (
+            <div key={p.id} className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <span className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl text-white ${p.color}`}>
+                  {p.icon}
+                </span>
+                <div>
+                  <p className="font-bold text-sm">{p.category}</p>
+                  <p className="text-xs text-slate-500">{p.performer}</p>
+                </div>
+              </div>
+              <p className="text-sm font-medium text-slate-800 mb-2">{p.title}</p>
+              {p.videoUrl && (
+                <a
+                  href={p.videoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 hover:underline"
+                >
+                  ▶ 참고 영상
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Activity Schedule Summary */}
