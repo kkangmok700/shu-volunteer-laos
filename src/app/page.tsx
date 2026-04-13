@@ -5,6 +5,7 @@ import Link from "next/link";
 import { members } from "@/data/members";
 import { dailySchedule } from "@/data/schedule";
 import { activities } from "@/data/activities";
+import { KoreaFlag, LaosFlag } from "@/components/Flags";
 
 function getDDay() {
   const target = new Date("2026-05-17T00:00:00+09:00");
@@ -44,49 +45,123 @@ export default function Dashboard() {
 
   return (
     <div className="p-4 md:p-8 max-w-7xl mx-auto animate-fade-in">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl md:text-3xl font-bold text-slate-900">
-          SHU Volunteer 대시보드
-        </h1>
-        <p className="text-slate-500 mt-1">라오스 해외봉사 관리 플랫폼</p>
-      </div>
 
-      {/* D-Day Banner */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-6 md:p-8 text-white mb-8 shadow-lg">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-blue-200 text-sm font-medium">2026 라오스 해외봉사</p>
-            <h2 className="text-xl md:text-2xl font-bold mt-1">
-              삼육보건대학교 &rarr; 라오스 국립대학교
-            </h2>
-            <p className="text-blue-200 mt-2">
-              2026년 5월 17일(일) ~ 5월 26일(화)
-            </p>
+      {/* Hero Banner with Flags */}
+      <div className="relative overflow-hidden rounded-3xl mb-8 shadow-xl">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#003478] via-[#1a1a6e] to-[#002868]" />
+        {/* Decorative circles */}
+        <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#C60C30]/20 blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#CE1126]/20 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+
+        <div className="relative z-10 p-6 md:p-10">
+          {/* Top: Flags & Title */}
+          <div className="flex flex-col items-center text-center mb-6">
+            <div className="flex items-center gap-4 md:gap-6 mb-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 shadow-lg border border-white/20">
+                <KoreaFlag className="w-20 h-14 md:w-28 md:h-20 rounded-md shadow-sm" />
+                <p className="text-white/80 text-xs mt-1.5 font-medium">대한민국</p>
+              </div>
+
+              {/* Connection Arrow */}
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex items-center gap-1">
+                  <div className="w-6 md:w-12 h-0.5 bg-gradient-to-r from-[#C60C30] to-white/60" />
+                  <svg className="w-5 h-5 md:w-7 md:h-7 text-white animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.5 12h-15m11.667-4l3.333 4-3.333 4M21 5c0 1.5-2 3-2 3s-2-1.5-2-3a2 2 0 014 0z" />
+                  </svg>
+                  <div className="w-6 md:w-12 h-0.5 bg-gradient-to-r from-white/60 to-[#CE1126]" />
+                </div>
+                <span className="text-white/50 text-[10px] md:text-xs tracking-widest">VOLUNTEER</span>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 shadow-lg border border-white/20">
+                <LaosFlag className="w-20 h-14 md:w-28 md:h-20 rounded-md shadow-sm" />
+                <p className="text-white/80 text-xs mt-1.5 font-medium">ສປປ ລາວ</p>
+              </div>
+            </div>
+
+            {/* Title */}
+            <div className="mt-2">
+              <p className="text-blue-300 text-xs md:text-sm tracking-wider font-medium uppercase">
+                2026 전문대학혁신지원사업
+              </p>
+              <h1 className="text-2xl md:text-4xl font-black text-white mt-1 tracking-tight">
+                SHU Volunteer
+              </h1>
+              <p className="text-white/70 text-sm md:text-base mt-1">
+                라오스 한국어 교육 해외봉사
+              </p>
+            </div>
           </div>
-          <div className="mt-4 md:mt-0 text-center">
-            <div className="bg-white/20 backdrop-blur rounded-xl px-6 py-4">
+
+          {/* Route Info */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-4 md:p-5 mb-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-white">
+              <div>
+                <p className="text-white/50 text-xs mb-1">출발</p>
+                <p className="font-bold text-sm md:text-base">삼육보건대학교</p>
+                <p className="text-white/60 text-xs">사회봉사단 / 혁신지원사업단</p>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="hidden md:flex items-center gap-2 text-white/40">
+                  <div className="w-12 h-px bg-white/30" />
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                  </svg>
+                  <div className="w-12 h-px bg-white/30" />
+                </div>
+                <div className="md:hidden flex items-center justify-center gap-2 text-white/40 text-xs">
+                  <div className="w-8 h-px bg-white/30" />
+                  <span>9박 10일</span>
+                  <div className="w-8 h-px bg-white/30" />
+                </div>
+              </div>
+              <div>
+                <p className="text-white/50 text-xs mb-1">도착</p>
+                <p className="font-bold text-sm md:text-base">라오스 국립대학교</p>
+                <p className="text-white/60 text-xs">비엔티안 한국어학당</p>
+              </div>
+            </div>
+          </div>
+
+          {/* D-Day + Date */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <div className="bg-white/15 backdrop-blur rounded-xl px-6 py-3 border border-white/20 text-center">
+              <p className="text-white/60 text-xs">봉사 기간</p>
+              <p className="text-white font-bold text-sm mt-0.5">
+                2026.05.17(일) ~ 05.26(화)
+              </p>
+            </div>
+            <div className="bg-gradient-to-r from-[#C60C30] to-[#CE1126] rounded-xl px-8 py-3 text-center shadow-lg shadow-red-900/30">
               {dday > 0 ? (
                 <>
-                  <p className="text-blue-200 text-xs">출발까지</p>
-                  <p className="text-4xl font-black animate-count-up">D-{dday}</p>
+                  <p className="text-red-200 text-xs">출발까지</p>
+                  <p className="text-white text-3xl font-black animate-count-up">D-{dday}</p>
                 </>
               ) : dday === 0 ? (
                 <>
-                  <p className="text-yellow-200 text-xs">오늘!</p>
-                  <p className="text-3xl font-black">D-DAY</p>
+                  <p className="text-yellow-200 text-xs">오늘 출발!</p>
+                  <p className="text-white text-3xl font-black">D-DAY</p>
                 </>
               ) : currentDay ? (
                 <>
-                  <p className="text-blue-200 text-xs">봉사 진행 중</p>
-                  <p className="text-3xl font-black">{currentDay}일차</p>
+                  <p className="text-red-200 text-xs">봉사 진행 중</p>
+                  <p className="text-white text-3xl font-black">{currentDay}일차</p>
                 </>
               ) : (
                 <>
-                  <p className="text-blue-200 text-xs">봉사 완료</p>
-                  <p className="text-2xl font-black">완료!</p>
+                  <p className="text-red-200 text-xs">봉사 완료</p>
+                  <p className="text-white text-2xl font-black">Mission Complete</p>
                 </>
               )}
+            </div>
+            <div className="bg-white/15 backdrop-blur rounded-xl px-6 py-3 border border-white/20 text-center">
+              <p className="text-white/60 text-xs">참가 인원</p>
+              <p className="text-white font-bold text-sm mt-0.5">
+                {members.length}명 (학생 16 + 교직원 3)
+              </p>
             </div>
           </div>
         </div>
