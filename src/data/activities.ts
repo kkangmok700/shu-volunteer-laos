@@ -11,6 +11,21 @@ export interface Activity {
 
 export const activities: Activity[] = [
   {
+    id: "korean-edu",
+    category: "대표활동",
+    title: "한국어 교육",
+    description: "봉사대 전체가 함께 진행하는 대표 봉사 활동 - 한국어 기초 교육",
+    icon: "📚",
+    color: "bg-emerald-500",
+    details: [
+      "한글 자모음 익히기",
+      "기초 인사말과 표현 학습",
+      "한글 이름 써보기",
+      "전체 팀원 합동 진행",
+    ],
+    members: ["전체"],
+  },
+  {
     id: "k-culture",
     category: "K-Culture",
     title: "한국 전통 놀이 체험",
