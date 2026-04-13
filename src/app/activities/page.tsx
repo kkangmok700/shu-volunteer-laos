@@ -115,6 +115,7 @@ export default function ActivitiesPage() {
             <thead>
               <tr className="bg-slate-50 border-b">
                 <th className="text-left px-3 py-2 font-medium text-slate-600">일자</th>
+                <th className="text-left px-3 py-2 font-medium text-slate-600">한국어 교육</th>
                 <th className="text-left px-3 py-2 font-medium text-slate-600">주민봉사</th>
                 <th className="text-left px-3 py-2 font-medium text-slate-600">보건교육</th>
                 <th className="text-left px-3 py-2 font-medium text-slate-600">전공&문화</th>
@@ -122,14 +123,15 @@ export default function ActivitiesPage() {
             </thead>
             <tbody>
               {[
-                { day: "2일차 (월)", r: "-", h: "-", c: "4H" },
-                { day: "3일차 (화)", r: "3H", h: "3H", c: "6H" },
-                { day: "4일차 (수)", r: "3H", h: "3H", c: "6H" },
-                { day: "5일차 (목)", r: "3H", h: "3H", c: "6H" },
-                { day: "6일차 (금)", r: "3H", h: "3H", c: "3H" },
+                { day: "2일차 (월)", k: "전체", r: "-", h: "-", c: "4H" },
+                { day: "3일차 (화)", k: "전체", r: "3H", h: "3H", c: "6H" },
+                { day: "4일차 (수)", k: "전체", r: "3H", h: "3H", c: "6H" },
+                { day: "5일차 (목)", k: "전체", r: "3H", h: "3H", c: "6H" },
+                { day: "6일차 (금)", k: "전체", r: "3H", h: "3H", c: "3H" },
               ].map((row, i) => (
                 <tr key={i} className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="px-3 py-2 font-medium">{row.day}</td>
+                  <td className="px-3 py-2 text-emerald-700 font-medium">{row.k}</td>
                   <td className="px-3 py-2">{row.r}</td>
                   <td className="px-3 py-2">{row.h}</td>
                   <td className="px-3 py-2">{row.c}</td>
@@ -137,6 +139,7 @@ export default function ActivitiesPage() {
               ))}
               <tr className="bg-blue-50 font-medium">
                 <td className="px-3 py-2">합계</td>
+                <td className="px-3 py-2 text-emerald-700">전체 진행</td>
                 <td className="px-3 py-2">12H</td>
                 <td className="px-3 py-2">12H</td>
                 <td className="px-3 py-2">25H</td>
