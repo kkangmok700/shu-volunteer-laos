@@ -1,0 +1,22 @@
+{
+  "name": "SHU Volunteer - 라오스 해외봉사",
+  "short_name": "SHU봉사",
+  "description": "삼육보건대학교 사회봉사단 라오스 해외봉사 관리 플랫폼",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
