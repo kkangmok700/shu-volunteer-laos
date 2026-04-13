@@ -210,7 +210,7 @@ export default function Dashboard() {
                 1일차 (일) - 인천공항, 비엔티안
               </p>
               <div className="border-l-2 border-blue-400 pl-3">
-                <p className="font-medium text-sm text-blue-600">오후</p>
+                <p className="font-medium text-sm text-blue-600">오전</p>
                 <ul className="text-sm text-slate-600 mt-1 space-y-0.5">
                   <li>- 집결 및 상태확인</li>
                   <li>- 체크인 및 탑승</li>
