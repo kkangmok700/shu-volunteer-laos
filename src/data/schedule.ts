@@ -33,7 +33,7 @@ export const dailySchedule: DailySchedule[] = [
     day: 1, date: "2026-05-17", dayOfWeek: "일", location: "인천공항, 비엔티안",
     hours: ["국제선 이동"],
     periods: [
-      { time: "오후", activities: ["집결 및 상태확인", "체크인 및 탑승", "출국(인천 → 비엔티안)", "숙소 도착 및 개인 정비 및 휴식"] }
+      { time: "오전", activities: ["집결 및 상태확인", "체크인 및 탑승", "출국(인천 → 비엔티안)", "숙소 도착 및 개인 정비 및 휴식"] }
     ]
   },
   {
