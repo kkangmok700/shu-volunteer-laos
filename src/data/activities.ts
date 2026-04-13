@@ -6,6 +6,7 @@ export interface Activity {
   icon: string;
   color: string;
   details: string[];
+  members: string[];
 }
 
 export const activities: Activity[] = [
@@ -21,19 +22,7 @@ export const activities: Activity[] = [
       "한국 전통 놀이 체험",
       "한국 문화 소개 프레젠테이션",
     ],
-  },
-  {
-    id: "k-food",
-    category: "K-Food",
-    title: "한국 대표음식 체험",
-    description: "한국 대표 음식을 함께 만들고 나누는 체험 프로그램",
-    icon: "🍳",
-    color: "bg-orange-500",
-    details: [
-      "한국 대표 음식 레시피 소개",
-      "함께 요리하기 체험",
-      "음식 나눔 행사",
-    ],
+    members: ["임다혜", "구나연", "김하민", "이하원", "이해인"],
   },
   {
     id: "k-beauty",
@@ -47,6 +36,21 @@ export const activities: Activity[] = [
       "스킨케어 교육",
       "화장법 시연",
     ],
+    members: ["박시연", "남유빈", "정세령", "이서준", "제갈준"],
+  },
+  {
+    id: "k-food",
+    category: "K-Food",
+    title: "한국 대표음식 체험",
+    description: "한국 대표 음식을 함께 만들고 나누는 체험 프로그램",
+    icon: "🍳",
+    color: "bg-orange-500",
+    details: [
+      "한국 대표 음식 레시피 소개",
+      "함께 요리하기 체험",
+      "음식 나눔 행사",
+    ],
+    members: ["인병진", "이요셉", "장재혁", "박슬하", "이정윤"],
   },
   {
     id: "health-edu",
@@ -61,6 +65,7 @@ export const activities: Activity[] = [
       "응급처치법, 열사병 예방교육",
       "하임리히법, 식습관 교육",
     ],
+    members: [],
   },
   {
     id: "it-edu",
@@ -74,6 +79,7 @@ export const activities: Activity[] = [
       "AI 활용 교육",
       "디지털 리터러시 향상",
     ],
+    members: [],
   },
   {
     id: "community",
@@ -87,5 +93,6 @@ export const activities: Activity[] = [
       "발마사지",
       "가정방문 건강 체크",
     ],
+    members: [],
   },
 ];

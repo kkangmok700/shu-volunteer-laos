@@ -280,6 +280,15 @@ export default function Dashboard() {
               <span className="text-2xl">{act.icon}</span>
               <p className="font-medium text-sm mt-1">{act.category}</p>
               <p className="text-xs text-slate-500 mt-0.5">{act.title}</p>
+              {act.members.length > 0 && (
+                <div className="flex flex-wrap gap-1 mt-1.5">
+                  {act.members.map((name, i) => (
+                    <span key={i} className="bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded text-[10px]">
+                      {name}
+                    </span>
+                  ))}
+                </div>
+              )}
             </Link>
           ))}
         </div>

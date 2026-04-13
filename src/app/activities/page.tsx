@@ -32,6 +32,16 @@ export default function ActivitiesPage() {
               </div>
             </div>
             <p className="text-sm text-slate-600 mb-3">{act.description}</p>
+            {/* Team Members */}
+            {act.members.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {act.members.map((name, i) => (
+                  <span key={i} className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full text-xs font-medium">
+                    {name}
+                  </span>
+                ))}
+              </div>
+            )}
             {selectedId === act.id && (
               <div className="border-t border-gray-100 pt-3 mt-3 animate-fade-in">
                 <p className="text-xs font-medium text-slate-500 mb-2">세부 활동</p>
@@ -43,6 +53,21 @@ export default function ActivitiesPage() {
                     </li>
                   ))}
                 </ul>
+                {act.members.length > 0 && (
+                  <div className="mt-4 pt-3 border-t border-gray-100">
+                    <p className="text-xs font-medium text-slate-500 mb-2">담당 팀원 ({act.members.length}명)</p>
+                    <div className="flex flex-wrap gap-2">
+                      {act.members.map((name, i) => (
+                        <div key={i} className="flex items-center gap-1.5">
+                          <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold ${act.color}`}>
+                            {name.charAt(0)}
+                          </div>
+                          <span className="text-sm text-slate-700">{name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </button>
